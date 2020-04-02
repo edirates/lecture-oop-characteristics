@@ -6,4 +6,13 @@ class Staff extends Employee {
     }
 }
 
-module.exports = Staff;
+class Trainee extends Employee {
+    constructor(firstname, lastname) {
+        super(firstname, lastname, "trainee");
+    }
+}
+
+module.exports = {
+    Staff,
+    Trainee
+};
