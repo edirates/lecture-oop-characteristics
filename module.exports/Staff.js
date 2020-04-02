@@ -12,6 +12,7 @@ class Trainee extends Employee {
     }
 }
 
+// If there are more than one to be exported you should pack it with object
 module.exports = {
     Staff,
     Trainee

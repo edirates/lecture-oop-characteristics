@@ -1,4 +1,10 @@
 const Manager = require("./Manager.js");
+
+// // Require class Staff and Trainee
+// const Staff = require("./Staff.js").Staff;
+// const Trainee = require("./Staff.js").Trainer;
+
+// require class Staff and Trainee using destructuring
 const { Staff, Trainee } = require("./Staff.js");
 
 // Create new instance Manager
