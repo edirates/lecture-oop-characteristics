@@ -35,14 +35,16 @@ Unlike instance method, both `getter` and `setter` is treated like property so w
 
 ```javascript
 class Person {
-	constructor (firstName, lastName) {
-    this._firstName = firstName;	// private property
-    this.lastName = lastName;	// public property
+  constructor (firstName, lastName) {
+    this._firstName = firstName;    // private property
+    this.lastName = lastName;	    // public property
   }
+  
   // Getter to access value of firstName
   get firstName() {
     return this._firstName;
   }
+  
   // Setter to change value of firstName
   set firstName(value) {
     this._firstName = value;
@@ -50,9 +52,11 @@ class Person {
 }
 
 const arya = new Person ("Arya", "Stark");
-console.log(arya);	// Output : Person { _firstName: "Arya", lastName: "Stark" }
+console.log(arya);	        // Output : Person { _firstName: "Arya", lastName: "Stark" }
+
 // Using setter just like assigning the property
 arya.firstName = "Robb"; 	// This will change the value of this._firstName
+
 // Using getter just like accessing the property
 console.log(arya.firstName); 	// Output : "Robb"
 ```
@@ -95,10 +99,10 @@ class Car {
 
 // Child Class (Toyota) inherits Parent Class (Car)
 class Toyota extends Car {
-	constructor (model, price, cc) {
-		super (model, price);	// This will invoke the constructor in parent class
-		this._cc = cc;	// This is additional property only exist in child class
-	}
+  constructor (model, price, cc) {
+    super (model, price);	// This will invoke the constructor in parent class
+    this._cc = cc;	        // This is additional property only exist in child class
+  }
 
   // Additional method only exist in child class
   start() {
@@ -109,7 +113,7 @@ class Toyota extends Car {
 const toyota = new Toyota ("Avanza", 2000, 1500);
 console.log(toyota);	// Output : Toyota { _model: "Avanza", _price: 2000, _cc: 1500 }
 toyota.brush("black");	// Output : "Avanza color is black."
-toyota.start();	// Output : "This Avanza engine is started."
+toyota.start();	        // Output : "This Avanza engine is started."
 ```
 
 ![inheritance](./assets/inheritance.png "inheritance")
@@ -150,10 +154,10 @@ class Car {
 
 // Child Class
 class Toyota extends Car {
-	constructor (model, price, cc) {
-		super (model, price);	// This will invoke the constructor in parent class
-		this._cc = cc;	// This is additional property only exist in child class
-	}
+  constructor (model, price, cc) {
+    super (model, price);	// This will invoke the constructor in parent class
+    this._cc = cc;	        // This is additional property only exist in child class
+  }
 
   // Parent method that will be overrided
   brush(color) {
@@ -171,7 +175,7 @@ class Toyota extends Car {
 
 const toyota = new Toyota ("Avanza", 2000, 1500);
 toyota.brush("black");	// Output : "This black Avanza will be brushed."
-toyota.start();	// Output : "This Avanza undefined engine is started."
+toyota.start();	        // Output : "This Avanza undefined engine is started."
 ```
 
 > Javascript doesn't support overloading so it will run the latest declared method.
